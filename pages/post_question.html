@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %}Post Questions{% endblock title %}
+
+{% block body %}
+	<div style="text-align:center">
+		<a href="home"><h4>Home</h4></a>
+		
+		<h3>Post your Question Here.</h3>
+		
+		<form action="post_que" method="post">
+		{% csrf_token %}
+			<textarea name="pquestion" placeholder="Write your question here...." rows="5" cols="120" style="width: 60vw"></textarea>
+			<br><br>
+			<input class="button" type="submit" value="Post Question">
+		</form>
+		{{msg}}
+	</div>
+{% endblock body %}

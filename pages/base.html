@@ -1,0 +1,101 @@
+<html>
+	<head>
+		<title>{% block title %}{% endblock title %}</title>
+		<style>
+			body{
+				margin: 0; padding: 0;
+				background-color: rgb(19, 19, 19);
+				color: rgb(242, 242, 242);
+				font-family: Arial, Helvetica, sans-serif;
+			}
+			hr{
+				margin: 0;
+				background-color: black;
+				height: 15px;
+				border: none;
+			}
+			header{
+				padding-left: 12vw;
+			}
+			.main{
+				align-items: center;
+				max-width: 90vw;
+				flex-direction: row;
+				justify-content: center;
+			}
+			.container{
+				flex: content;
+				margin-left: 10vw;
+			}
+			a{
+				text-decoration: none;
+				color: rgb(36, 182, 255);
+			} a:hover {
+				color:rgb(96, 205, 255);
+			}
+			textarea, input{
+				background-color: black;
+				color: rgb(218, 225, 231);
+				border: none;
+				padding: 10px;
+				border-radius: 5px;
+				width: 300px;
+			}
+
+			input:focus{
+				border: none;
+			}
+			.button{
+				background-color: rgb(16, 124, 196);
+				border-radius: 5px;
+				min-width: 80px;
+				max-width: 160px;
+			}
+			.question{
+				text-align: left;
+			}
+			th,td, table{
+				max-width: 95vw;
+				border-color: rgb(20, 20, 20);
+				/* border-collapse: collapse; */
+				border-radius: 10px;
+				padding: 10px 20px;
+			}
+			table{
+				background-color: black;
+			}
+			td,tr{
+				background-color: rgb(21, 21, 21);
+				text-align: center;
+			}
+			.qna{
+				margin: 35px 30px;
+			}
+			.heading{
+				background-color: rgb(11, 11, 11);
+				border-radius: 10px;
+				padding: 15px;
+				width: max-content;
+			}
+			.answr{
+				width: 500px;
+				border-radius: 10px;
+				background-color: rgb(13, 13, 13);
+				border: 2px solid;
+				border-color: rgb(70, 70, 70);
+			}
+		</style>
+	</head>
+	<body>
+		<hr>
+		<header><h1><a href="check_qna" style="color: rgb(243, 243, 243)" >QNA Website</a></h1></header>
+		<hr>
+		<main class="main">
+			<div class="container">
+				{% block body %}{% endblock body %}
+			</div>
+		</main>
+		<hr style="margin-top: 80px">
+		
+	</body>
+</html>

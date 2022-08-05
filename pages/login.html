@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}Welcome to QNA Website{% endblock title %}
+
+{% block body %}
+	<div style="text-align:center">
+		<h3>QNA Login</h3>
+		
+		<form action="login" method="post">
+		{% csrf_token %}
+			<input type="text" name="user" placeholder="Enter username"><br><br>
+			<input type="password" name="upass" placeholder="Enter password"><br><br>
+			<input class="button" type="submit" value="Login">
+		</form>
+		{{error}}
+	</div>
+{% endblock body %}

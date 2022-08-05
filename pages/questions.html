@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %}All Questions{% endblock title %}
+
+{% block body %}
+	<div style="text-align:center">
+		<a href="home"><h4>Home</h4></a>
+		<h3>All Questions.</h3>
+		
+		<table border="1" width="100%">
+			<tr>
+				<th>Question ID</th>
+				<th>Question</th>
+				<th>Posted By</th>
+			</tr>
+		{% for i in res %}
+			<tr>
+				<td>{{i.id}}</td>
+				<td class="question"><a href="answers?qid={{i.id}}">{{i.pquestion}}</a></td>
+				<td>{{i.puser}}</td>
+			</tr>
+		{% endfor %}
+		</table>
+		
+	</div>
+{% endblock body %}

@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %}All QNAs{% endblock title %}
+
+{% block body %}
+	<div class="qna">
+		<!-- <a href="home"><h4>Home</h4></a> -->
+		
+		<div class="heading" style="color: rgb(255, 162, 218) ;"><b>{{que.puser}}: </b>{{que.pquestion}}</div><br>
+		
+		{% for i in ans %}
+		<div class="heading" style="margin: 5px 0px">
+		<b>{{i.auser}}: </b><span style="color:rgb(47, 200, 255)"> {{i.answr}}</span>
+			<br>
+		</div>
+		{% endfor %}
+		
+		<br>
+		<form action="new_ans" method="post">
+		{% csrf_token %}
+			<textarea class='answr' name="answr" rows="3" cols="150" placeholder="Write your answer here...."></textarea>
+			<input type="hidden" value="{{que.id}}" name="qid">
+			<br><br>
+			<input class="button" type="submit" value="Post Answer">
+		</form>
+	</div>
+{% endblock body %}

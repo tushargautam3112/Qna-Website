@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}Signup Page{% endblock title %}
+
+{% block body %}
+	<div style="text-align:center">
+		<a href="../"><h4>Home</h4></a>
+		
+		<h3>Create your account.</h3>
+		
+		
+		<form action="account" method="post">
+		{% csrf_token %}
+			<input type="text" name="sname" placeholder="Enter name"><br><br>
+			<input type="text" name="user" placeholder="Enter username"><br><br>
+			<input type="password" name="upass" placeholder="Enter password"><br><br>
+			<input type="submit" value="Signup">
+		</form>
+		{{msg}}
+	</div>
+{% endblock body %}
